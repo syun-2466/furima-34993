@@ -17,7 +17,6 @@
 
 -has_many :items
 -has_many :histories
--has_many :comments
 
 ## items テーブル
 
@@ -36,7 +35,6 @@
 ### Association
 
 -belongs_to :user
--has_many :comment
 -has_one :history
 
 ## sends テーブル
@@ -65,18 +63,5 @@
 ### Association
 
 -belongs_to :user
--has_one :item
--belongs_to :send
-
-## comments テーブル
-
-| Column  | Type       | Options                       |
-| ------- | ---------- | ----------------------------- |
-| content | text       | null:false                    |
-| items   | references | null: false foreign_key: true |
-| user    | references | null: false foreign_key: true |
-
-### Association
-
--belongs_to :user
 -belongs_to :item
+-has_one :send
